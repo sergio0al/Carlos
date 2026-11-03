@@ -1,0 +1,31 @@
+#sectionAdd{
+    position: absolute;
+    margin: 0 auto;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#sectionAdd form{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background-color: red;
+    box-sizing: border-box;
+    padding: 30px 40px;
+    border-radius: 12px;
+}
+
+#sectionAdd form label{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+
+
+.hidden{
+    display: none !important;
+}

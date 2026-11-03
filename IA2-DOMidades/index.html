@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/a9b5133090.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+
+    <main>
+    <section id="sectionFiltro">
+        <form id="form">
+            <label for="selectEstat">Estat <select id="selectEstat">
+                <option value="Obert Procés Tancat">Tots</option>
+                <option value="Obert">Obert</option>
+                <option value="Procés">En Procés</option>
+                <option value="Tancat">Tancat</option>
+            </select></label>
+            <label for="selectPrioritat">Prioritat <select id="selectPrioritat">
+                <option value="Alta Mitjana Baixa">Tots</option>
+                <option value="Alta">Alta</option>
+                <option value="Mitjana">Mitjana</option>
+                <option value="Baixa">Baixa</option>
+            </select></label>
+            <button>Netejar Filtres</button>
+        </form>
+    </section>
+
+    <section id="sectionTabla">
+        <button id="addBtn"><i class="fa-solid fa-plus"></i> Nou Incidència</button>
+        <table id="table" border="">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Titol</th>
+                    <th>Descripció</th>
+                    <th>Estat</th>
+                    <th>Prioritat</th>
+                    <th>Assignat</th>
+                    <th>Data</th>
+                    <th>Accion</th>
+                </tr>
+            </thead>
+            <tbody id="tbody">
+            </tbody>
+        </table>
+    </section>
+    </main>
+    
+
+
+
+
+    <section id="sectionAdd" class="hidden">
+        <form action="" id="formAdd">
+            <h2>Nova Incidència</h2>
+            <label for="title">Titol<input type="text" id="title"></label>
+            <label for="description">Descripció <textarea name="" id="description"></textarea></label>
+            <label for="selectStatus">Estat <select id="selectStatus">
+                <option value="Obert Procés Tancat">Tots</option>
+                <option value="Obert">Obert</option>
+                <option value="Procés">En Procés</option>
+                <option value="Tancat">Tancat</option>
+            </select></label>
+            <label for="selectPriority">Prioritat <select id="selectPriority">
+                <option value="Alta Mitjana Baixa">Tots</option>
+                <option value="Alta">Alta</option>
+                <option value="Mitjana">Mitjana</option>
+                <option value="Baixa">Baixa</option>
+            </select></label>
+            <label for="assing">Assignat a<input type="text" id="assing"></label>
+            <button id="tancarBtn">Tancar</button>
+            <button id="desaBtn">Desar</button>
+        </form>
+    </section>
+
+
+    <script type="module" src="main.js"></script>
+</body>
+</html>
