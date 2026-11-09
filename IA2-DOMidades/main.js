@@ -15,6 +15,7 @@ guardarLocalStorage()
 const tbody = document.querySelector("#tbody")
 let html = ""
 function cargarTabla(){
+    console.log(BD)
     html = ""
     BD.forEach(linea =>{
         html += `
@@ -80,11 +81,12 @@ const assing = document.querySelector("#assing")
 const desaBtn = document.querySelector("#desaBtn")
 desaBtn.addEventListener("click", (e) =>{
     e.preventDefault()
-    BD.push({id: BD.length+1, titol: title.value, descripcio: description.value, estat: selectStatus.value, prioritat: selectPrioritat.value, assignat: assing.value, data: "29-08-2007"},)
+    BD.push({id: BD.length+1, titol: title.value, descripcio: description.value, estat: selectStatus.value, prioritat: selectPriority.value, assignat: assing.value, data: "29-08-2007"},)
     cargarTabla()
     sectionAdd.classList.toggle("hidden")
     guardarLocalStorage()
 })
+
 
 
 let tancarBtn = document.querySelector("#tancarBtn")
@@ -103,15 +105,7 @@ let table = document.querySelector("#table")
 table.addEventListener("click", (e) =>{
     if(e.target.classList.contains("deleteBtn")){
         delete BD[e.target.dataset.id - 1]
+        guardarLocalStorage()
         cargarTabla()
-    }else if(e.target.classList.contains("editBtn")){
-        sectionAdd.classList.remove("hidden")
-        let id = e.target.dataset.id - 1
-        title.value = BD[id].titol
-        description.value = BD[id].descripcio
-        selectStatus.value = BD[id].estat
-        selectPriority.value = BD[id].prioritat
-        assing.value = BD[id].assignat
-        desaBtn.classList.add("hidden")
     }
 })
