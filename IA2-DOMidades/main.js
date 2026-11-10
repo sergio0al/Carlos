@@ -4,6 +4,7 @@ const tabla = [
 ]
 
 
+
 let BD = JSON.parse(localStorage.getItem("tabla")) ?? JSON.parse(JSON.stringify(tabla))
 function guardarLocalStorage(){
     localStorage.setItem("tabla", JSON.stringify(BD))
@@ -61,6 +62,7 @@ function filtrar(){
 
 
 // Añadir 
+let editando = false
 
 const addBtn = document.querySelector("#addBtn")
 const sectionAdd = document.querySelector("#sectionAdd")
@@ -79,13 +81,17 @@ const selectPriority = document.querySelector("#selectPriority")
 const assing = document.querySelector("#assing")
 
 const desaBtn = document.querySelector("#desaBtn")
-desaBtn.addEventListener("click", (e) =>{
-    e.preventDefault()
-    BD.push({id: BD.length+1, titol: title.value, descripcio: description.value, estat: selectStatus.value, prioritat: selectPriority.value, assignat: assing.value, data: "29-08-2007"},)
-    cargarTabla()
-    sectionAdd.classList.toggle("hidden")
-    guardarLocalStorage()
-})
+    desaBtn.addEventListener("click", (e) =>{
+        e.preventDefault()
+        if(editando){
+            
+        }else{
+            BD.push({id: BD.length+1, titol: title.value, descripcio: description.value, estat: selectStatus.value, prioritat: selectPriority.value, assignat: assing.value, data: "29-08-2007"},)
+            cargarTabla()
+            sectionAdd.classList.toggle("hidden")
+            guardarLocalStorage()
+        }
+    })
 
 
 
@@ -99,13 +105,23 @@ tancarBtn.addEventListener("click", (e) =>{
 
 
 
-
 // Editar Eliminar 
 let table = document.querySelector("#table")
 table.addEventListener("click", (e) =>{
-    if(e.target.classList.contains("deleteBtn")){
-        delete BD[e.target.dataset.id - 1]
+    if (e.target.classList.contains("deleteBtn")) {
+        BD = BD.filter(l => l.id !== Number(e.target.dataset.id))
         guardarLocalStorage()
         cargarTabla()
+    }else if (e.target.classList.contains("editBtn")) {
+        const linea = BD.find(l => l.id === Number(e.target.dataset.id))
+
+        sectionAdd.classList.toggle("hidden")
+        title.value = linea.titol
+        description.value = linea.descripcio
+        selectStatus.value = linea.estat
+        selectPriority.value = linea.prioritat
+        assing.value = linea.assignat
+        editando = Number(e.target.dataset.id) 
+
     }
 })
