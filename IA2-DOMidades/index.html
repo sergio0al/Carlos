@@ -23,7 +23,7 @@
                 <option value="Procés">En Procés</option>
                 <option value="Tancat">Tancat</option>
             </select></label>
-            <label for="selectPrioritat">Prioritat <select id="selectPrioritat">
+            <label for="selectPrioritat">Prioritat <select id="selectPrioritat" required>
                 <option value="Alta Mitjana Baixa">Tots</option>
                 <option value="Alta">Alta</option>
                 <option value="Mitjana">Mitjana</option>
@@ -35,7 +35,7 @@
 
     <section id="sectionTabla">
         <button id="addBtn"><i class="fa-solid fa-plus"></i> Nou Incidència</button>
-        <table id="table" border="">
+        <table id="table">
             <thead>
                 <tr>
                     <th>#</th>
@@ -60,20 +60,17 @@
 
     <section id="sectionAdd" class="hidden">
         <form action="" id="formAdd">
-            <h2>Nova Incidència</h2>
             <label for="title">Titol<input type="text" id="title"></label>
             <label for="description">Descripció <textarea name="" id="description"></textarea></label>
-            <label for="selectStatus">Estat <select id="selectStatus">
-                <option value="Obert Procés Tancat">Tots</option>
+            <label for="selectStatus">Estat <select id="selectStatus" required>
                 <option value="Obert">Obert</option>
                 <option value="Procés">En Procés</option>
                 <option value="Tancat">Tancat</option>
             </select></label>
             <label for="selectPriority">Prioritat <select id="selectPriority">
-                <option value="Alta Mitjana Baixa">Tots</option>
-                <option value="Alta">Alta</option>
-                <option value="Mitjana">Mitjana</option>
                 <option value="Baixa">Baixa</option>
+                <option value="Mitjana">Mitjana</option>
+                <option value="Alta">Alta</option>
             </select></label>
             <label for="assing">Assignat a<input type="text" id="assing"></label>
             <button id="tancarBtn">Tancar</button>

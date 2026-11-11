@@ -21,13 +21,13 @@ function cargarTabla(){
     BD.forEach(linea =>{
         html += `
         <tr class="linea" data-estat="${linea.estat}" data-prioritat="${linea.prioritat}">
-            <td>${linea.id}</td>
-            <td>${linea.titol}</td>
-            <td>${linea.descripcio}</td>
-            <td>${linea.estat}</td>
-            <td>${linea.prioritat}</td>
-            <td>${linea.assignat}</td>
-            <td>${linea.data}</td>
+            <td class="id">${linea.id}</td>
+            <td class="titol">${linea.titol}</td>
+            <td class="descripcion">${linea.descripcio}</td>
+            <td class="estat"><span class="${linea.estat}">${linea.estat}</span></td>
+            <td class="prioritat"><span class="${linea.prioritat}">${linea.prioritat}</span></td>
+            <td class="assignat">${linea.assignat}</td>
+            <td class="data">${linea.data}</td>
             <td><button data-id="${linea.id}" class="editBtn">Editar</button><button data-id="${linea.id}" class="deleteBtn">Eliminar</button></td>
         </tr>`  
     })
@@ -69,6 +69,11 @@ const sectionAdd = document.querySelector("#sectionAdd")
 const formAdd = document.querySelector("#formAdd")
 addBtn.addEventListener("click", () =>{
     sectionAdd.classList.toggle("hidden")
+    title.value = ""
+    description.value = ""
+    selectStatus.value = ""
+    selectPriority.value = ""
+    assing.value = ""
     guardarLocalStorage()
 })
 
@@ -84,13 +89,19 @@ const desaBtn = document.querySelector("#desaBtn")
     desaBtn.addEventListener("click", (e) =>{
         e.preventDefault()
         if(editando){
-            
+            let tarea = BD.find(t => t.id === editando)
+            tarea.titol = title.value
+            tarea.descripcio = description.value
+            tarea.estat = selectStatus.value
+            tarea.prioritat = selectPriority.value
+            tarea.assignat = assing.value
+            editando = false
         }else{
             BD.push({id: BD.length+1, titol: title.value, descripcio: description.value, estat: selectStatus.value, prioritat: selectPriority.value, assignat: assing.value, data: "29-08-2007"},)
-            cargarTabla()
-            sectionAdd.classList.toggle("hidden")
-            guardarLocalStorage()
         }
+        cargarTabla()
+        sectionAdd.classList.toggle("hidden")
+        guardarLocalStorage()
     })
 
 

@@ -10,7 +10,7 @@ header{
     width: 98vw;
     height: 150px;
     margin: 20px auto;
-    background-color: rgb(49, 176, 250);
+    background-color: rgb(39, 148, 211);
     text-align: center;
     align-content: center;
     border-radius: 12px;
@@ -73,14 +73,11 @@ main{
 }
 
 
-
-
-
 #sectionAdd{
     position: absolute;
     margin: 0 auto;
-    top: 0;
-    left: 0;
+    top: 100px;
+    left: 650px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -90,20 +87,168 @@ main{
     display: flex;
     flex-direction: column;
     gap: 20px;
-    background-color: red;
+    background-color: rgb(228, 228, 228);
     box-sizing: border-box;
     padding: 30px 40px;
     border-radius: 12px;
+    width: 600px;
 }
 
 #sectionAdd form label{
     display: flex;
     flex-direction: column;
     gap: 10px;
+    letter-spacing: 1px;
 }
+
+#sectionAdd form label input{
+    border-radius: 8px;
+    border: 0px;
+    height: 30px;
+    box-sizing: border-box;
+    padding: 0px 10px;
+}
+
+#sectionAdd form label select{
+    border-radius: 8px;
+    border: 0px;
+    height: 30px;
+    box-sizing: border-box;
+    padding: 0px 10px;
+}
+
+#sectionAdd form textarea{
+    max-width: 100%;
+    min-width: 100%;
+    min-height: 150px;
+    max-height: 150px;
+    border: 0px;
+    border-radius: 6px;
+    box-sizing: border-box;
+    padding: 10px;
+}
+
+#sectionAdd form button{
+    height: 40px;
+    border-radius: 6px;
+    border: 0px;
+    cursor: pointer;
+}
+
 
 
 
 .hidden{
     display: none !important;
 }
+
+
+
+#addBtn{
+    background-color: rgb(53, 53, 248);
+    padding: 10px;
+    border-radius: 8px;
+    color: white;
+    font: bold;
+    border: 0px;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+
+/* Tabla */
+
+
+#sectionTabla{
+    width: 90%;
+    margin: 20px auto;
+}
+
+#table{
+    border: 1px solid gray;
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+#table thead{
+    background-color: rgb(236, 236, 236);
+    height: 30px;
+    border-bottom: 1px solid gray;
+}
+
+#table tbody tr{
+    border-bottom: 1px solid gray;
+    height: 40px;   
+}
+
+
+
+
+#table .Obert{
+    background-color: green;
+    box-sizing: border-box;
+    padding: 5px 6px;
+    font-size: 11px;
+    color: white;
+    border-radius: 6px;
+}
+
+
+#table .Procés{
+    background-color: rgb(187, 187, 3);
+    box-sizing: border-box;
+    padding: 5px 6px;
+    font-size: 11px;
+    color: white;
+    border-radius: 6px;
+}
+
+#table .Tancat{
+    background-color: red;
+    box-sizing: border-box;
+    padding: 5px 6px;
+    font-size: 11px;
+    color: white;
+    border-radius: 6px;
+}
+
+#table .Tancat{
+    background-color: red;
+    box-sizing: border-box;
+    padding: 5px 6px;
+    font-size: 11px;
+    color: white;
+    border-radius: 6px;
+}
+
+
+
+
+#table .Alta{
+    background-color: red;
+    box-sizing: border-box;
+    padding: 5px 6px;
+    font-size: 11px;
+    color: white;
+    border-radius: 6px;
+}
+
+#table .Baixa{
+    background-color: blue;
+    box-sizing: border-box;
+    padding: 5px 6px;
+    font-size: 11px;
+    color: white;
+    border-radius: 6px;
+}
+
+#table .Mitjana{
+    background-color: rgb(187, 187, 3);
+    box-sizing: border-box;
+    padding: 5px 6px;
+    font-size: 11px;
+    color: white;
+    border-radius: 6px;
+}
+
